@@ -7,9 +7,9 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
+        <!-- EG: Aggiungere qualche elemento per fare l'header -->
         <div class="login_menu">Log in to ISL</div>
-        <!-- EG: Aggiungere immagine ingranaggio -->
-        <div class="help">settings.png</div>
+        <div class="help"><img src="img/settings.png" alt="settings icon"></div>
         <!-- EG: Si può usare anche jQuery e evitare di fare form in PHP-->
         <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
             <input type="text" name="username" id="">
