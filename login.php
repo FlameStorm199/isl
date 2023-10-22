@@ -6,12 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <link rel="stylesheet" href="css/login_style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
 </head>
 
 <body>
     <!-- EG: Aggiungere qualche elemento per fare l'header -->
     <nav class="navbar bg-color">
         <a class="navbar-brand" href="#">
+            <!-- <img src="img/nav-logo-reversed.png" id="logo-img" alt=""> -->
             <img src="img/nav-logo-removebg.png" id="logo-img" alt="">
         </a>
         <!-- <div class="help"><img src="img/settings.png" alt="settings icon"></div> -->
@@ -30,10 +32,10 @@
                 <div class="form-floating">
                     <input type="password" name="password" id="floatingPassword" class="form-control" placeholder="Password" autocomplete="off"><br>
                     <label for="floatingPassword">Password</label>
+                    <!-- aggiunge show password -->
                 </div>
                 <input type="submit" value="Login" id="btn-login">
             </form>
-            <div class="signin_menu">Don't have an account? <a href="">Sign up</a></div>
             <!-- <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
                 <input type="submit" value="Sign up">
             </form> -->
