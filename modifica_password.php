@@ -33,6 +33,8 @@ if(isset($_POST['modifica'])) {
         else
             echo "Errore: ".$connessione->error;
 
+        $connessione->close();
+
     }
     else
         echo "Errore: Dati mancanti.";

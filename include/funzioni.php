@@ -33,6 +33,8 @@ function controlloLogin($dati) {
         else
             echo "Errore: Utente inesistente.";
 
+        $connessione->close();  //chiudiamo la connessione
+
     }
     else
         echo "Errore: Dati mancanti o inesistenti.";
