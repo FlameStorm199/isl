@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+include "include/funzioni.php";
+
+if(isset($_SESSION['current_user']))
+    header("Location: benvenuto.php");
+
+?>
+
 <!doctype html>
 <html>
 
@@ -34,7 +44,7 @@
                     <label for="floatingPassword">Password</label>
                     <!-- aggiunge show password -->
                 </div>
-                <input type="submit" value="Login" id="btn-login">
+                <input type="submit" name="login" value="Login" id="btn-login">
             </form>
             <!-- <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
                 <input type="submit" value="Sign up">
@@ -45,3 +55,16 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>
+
+<?php
+
+if(isset($_POST['login'])) {
+    
+    if(controlloLogin($_POST)){
+        $_SESSION['current_user'] = $_POST['username'];
+        header("Location: benvenuto.php");
+    }
+        
+}
+
+?>
