@@ -13,3 +13,19 @@ CREATE TABLE utenti (   --crea la tabella "utenti"
 INSERT INTO utenti (username,password) VALUES   --inseriamo manualmente degli utenti
     ('admin', '$2y$10$xHMvNdLv.xxxqKlG2HABHuWE4.T7AAuuaxOaMTqIS0Hbj6yMLqWsW'),  --pw: Passw0rd
     ('utente', '$2y$10$4oNTPFb5WZP3/Ly6dj3LRe0z9DqeJEGMXTvEpOM6iBip5D23sLxhW'); --pw: 1234
+
+--Copy-paste version
+
+CREATE DATABASE IF NOT EXISTS utenti
+
+USE utenti;
+
+CREATE TABLE utenti (  
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL, 
+    password VARCHAR(255) NOT NULL
+);
+
+INSERT INTO utenti (username,password) VALUES 
+    ('admin', '$2y$10$xHMvNdLv.xxxqKlG2HABHuWE4.T7AAuuaxOaMTqIS0Hbj6yMLqWsW'),  
+    ('utente', '$2y$10$4oNTPFb5WZP3/Ly6dj3LRe0z9DqeJEGMXTvEpOM6iBip5D23sLxhW');
