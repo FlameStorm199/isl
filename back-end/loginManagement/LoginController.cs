@@ -6,6 +6,7 @@ namespace loginManagement
     {
         public static async Task<string> CheckUser(Utente u)
         {
+            //TODO: Usare enum!!!!
             try
             {
                 string result = "";
@@ -26,7 +27,7 @@ namespace loginManagement
                     if (reader.HasRows)
                         result = "Perfetto!";
                     else 
-                        result = "Errore nel login";
+                        result = $"Errore nel login: {u.Username} e {u.Password}";
                 }
 
                 dbCon.Close();
