@@ -4,16 +4,18 @@ namespace loginManagement
 {
     public class LoginController
     {
-        public static async Task<bool> CheckUser(Utente u)
+        public static async Task<string> CheckUser(Utente u)
         {
             try
             {
-                bool result = false;
-                var dbCon = DBConnection.Instance();
+                string result = "";
+                var dbCon = new DBConnection();
                 dbCon.Server = "localhost";
                 dbCon.DatabaseName = "ISL_masterDB";
-                dbCon.Username = u.Username;
-                dbCon.Password = u.Password;
+                //dbCon.Username = u.Username;
+                //dbCon.Password = u.Password;
+                dbCon.Username = "root";
+                dbCon.Password = "";
 
                 if (dbCon.IsConnect())
                 {
@@ -22,17 +24,18 @@ namespace loginManagement
                     var cmd = new MySqlCommand(query, dbCon.Connection);
                     var reader = cmd.ExecuteReader();
                     if (reader.HasRows)
-                        result = true;
+                        result = "Perfetto!";
                     else 
-                        result = false;
-                    dbCon.Close();
+                        result = "Errore nel login";
                 }
+
+                dbCon.Close();
 
                 return result;
             }
-            catch(Exception)
+            catch(Exception e)
             {
-                return false;
+                return e.Message;
             }
         }
     }
