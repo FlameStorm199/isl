@@ -4,7 +4,7 @@ namespace loginManagement
 {
     public class DBConnection
     {
-        private DBConnection()
+        public DBConnection()
         {
         }
 
