@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "e5XczB3BCuwviQSM4R7H2xQQXmJOaD+5DQ69sAKmVbA=",
+  "Source": "loginManagement",
+  "BasePath": "_content/loginManagement",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

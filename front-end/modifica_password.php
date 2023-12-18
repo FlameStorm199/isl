@@ -1,6 +1,11 @@
+<h1>Modifica password</h1>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+    <label for="username">Utente: </label>
     <input type="text" name="username">
+    <br><br>
+    <label for="password">Nuova password: </label>
     <input type="text" name="password">
+    <br><br>
     <input type="submit" name="modifica" value="Modifica password">
 </form>
 
@@ -13,12 +18,7 @@ if(isset($_POST['modifica'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $db_server = "localhost";
-        $db_user = "root";
-        $db_pw = "";
-        $db_name = "utenti";
-
-        $connessione = new mysqli($db_server,$db_user,$db_pw,$db_name);
+        $connessione = new mysqli('localhost','root','','utenti');
 
         if($connessione->connect_error)
             die("Connessione al database fallita: ".$connessione->connect_error);
