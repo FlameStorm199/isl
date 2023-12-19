@@ -9,8 +9,8 @@ session_start();
     </head>
 
     <body>
-        <h1>Benvenuto, <?php echo $_SESSION['current_user']; ?></h1>
-        <p><a href="logout.php">Logout</a></p>
+        <h1>Schermata home</h1>
+        <p><a href="index.php">Logout</a></p>
     </body>
 
 </html>

@@ -18,12 +18,17 @@ function makeRequest(param) {
             console.log("Errore: "+xhttp.response);
         }*/
 
-        //TODO: Usare enum!!!!
-        if(xhttp.response != "Perfetto!"){
-            document.getElementById('result').innerHTML = "Login fallito!";
+        if(xhttp.response == 1){
+            document.getElementById('result').innerHTML = "Login effettuato con successo";
+            window.location.href = "benvenuto.php";
+        }else if(xhttp.response == 2){
+            document.getElementById('result').innerHTML = "Credenziali errate!";
+        }else if(xhttp.response == 3){
+            document.getElementById('result').innerHTML = "Un'eccezione è stata lanciata durante il login.";
         }else{
-            document.getElementById('result').innerHTML = "Login effettuato con successo!";
+            document.getElementById('result').innerHTML = "Chiamata API fallita.";
         }
+
         console.log("Response: "+xhttp.response); 
     };
 
