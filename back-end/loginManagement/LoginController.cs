@@ -4,12 +4,11 @@ namespace loginManagement
 {
     public class LoginController
     {
-        public static async Task<string> CheckUser(Utente u)
+        public static async Task<LoginResult> CheckUser(Utente u)
         {
-            //TODO: Usare enum!!!!
             try
             {
-                string result = "";
+                LoginResult result = 0;
                 var dbCon = new DBConnection();
                 dbCon.Server = "localhost";
                 dbCon.DatabaseName = "ISL_masterDB";
@@ -25,18 +24,18 @@ namespace loginManagement
                     var cmd = new MySqlCommand(query, dbCon.Connection);
                     var reader = cmd.ExecuteReader();
                     if (reader.HasRows)
-                        result = "Perfetto!";
+                        result = LoginResult.LoginSuccesful;
                     else 
-                        result = $"Errore nel login: {u.Username} e {u.Password}";
+                        result = LoginResult.LoginFailed;
                 }
 
                 dbCon.Close();
 
                 return result;
             }
-            catch(Exception e)
+            catch(Exception)
             {
-                return e.Message;
+                return LoginResult.Exception;
             }
         }
     }
