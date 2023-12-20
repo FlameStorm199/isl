@@ -91,3 +91,6 @@ create table utenti_ruoli(
     foreign key(id_ruolo) references ruoli(id_ruolo),
     primary key(username, id_ruolo)
 );
+
+INSERT INTO utenti(username,password) VALUES('utente','123');
+INSERT INTO utenti(username,password) VALUES('dbadmin','password');
