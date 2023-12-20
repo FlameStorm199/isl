@@ -42,8 +42,7 @@ create table scaffali(
     codice_scaffale char(10),
     codice_area char(10),
     codice_magazzino char(10),
-    foreign key(codice_area) references aree(codice_area),
-    foreign key(codice_magazzino) references magazzini(codice_magazzino),
+    foreign key(codice_area,codice_magazzino) references magazzini(codice_area,codice_magazzino),
     primary key(codice_scaffale, codice_area, codice_magazzino)
 );
 
@@ -56,7 +55,9 @@ create table bancali(
     carico char(20),
     fragile boolean,
     codice_scaffale char(10),
-    foreign key(codice_scaffale) references scaffali(codice_scaffale)
+    codice_area char(10),
+    codice_magazzino char(10),
+    foreign key(codice_scaffale,codice_area,codice_magazzino) references scaffali(codice_scaffale,codice_area,codice_magazzino)
 );
 
 create table bancali_task(
